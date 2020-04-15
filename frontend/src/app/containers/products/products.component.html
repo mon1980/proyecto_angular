@@ -1,0 +1,14 @@
+
+<h5 class="tituloh5"> Productos</h5>
+<div class="products" *ngIf="productsService.products"
+>
+    <div *ngFor="let product of productsService.products" class="product" (click)="showProductDetail(product.id)"> 
+        <h2 class="nombreproducto">{{product.name}}</h2>
+        <img src="{{product.image_path}}" alt="no hay imagen">
+        <h3 class="precio">Precio: {{product.price}} €</h3>
+        <h4 class="stock">Stock: {{product.cantidad}} unidades</h4>
+    </div>
+</div>
+
+
+

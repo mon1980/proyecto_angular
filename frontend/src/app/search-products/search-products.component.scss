@@ -1,0 +1,49 @@
+
+    .products {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; 
+        margin-top: 30px;
+        background-color: beige;
+
+        
+    }
+    
+    .product{
+    
+        padding: 0.5em;
+        margin: 0.5em;
+        border-radius: 0.5em;
+        background-color: #D697FF;
+        width: 24em;
+    }
+    
+    img {
+        border-radius: 0.5em;
+        height: 250px;
+        display:block;
+        margin:auto;
+    }
+    
+    .nombreproducto {
+    text-align: center;
+    font-size: 17px;
+    background-color: #e1b12c;
+    border-radius: 34px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 3px;
+    color: white;
+    
+    }
+    
+    .precio{
+    text-align: center;
+    font-size: 16px;
+    margin-top:10px;
+
+    }
+    
+    .stock{
+    text-align: center;
+    font-size: 16px;
+    }

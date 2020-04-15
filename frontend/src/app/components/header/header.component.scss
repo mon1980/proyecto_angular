@@ -1,0 +1,63 @@
+.btn-outline-success {
+    color: white;
+    background-color: green;
+}
+
+img{
+width: 7%;
+border: 1px solid black;
+border-radius: 4px;
+margin-right: 20px;
+}
+
+.titulo{
+    display:flex;
+    flex-wrap: wrap;
+    background-color: beige;
+    margin-top: 18px;
+    margin-bottom: 25px;
+    color: black;
+    margin-top: 25px;
+    margin-left: 30px;
+    border-bottom: 1px solid #DB86F2;
+
+    }
+
+    h1{
+        color: black;
+        font-size: 20px;
+        padding-top: 14px;
+        font-size: 23px;
+        font-family: 'Roboto', sans-serif;
+        
+    }
+
+    .form-inline{
+      margin-right: 40px;
+
+    }
+
+    #desconectar{
+        cursor: pointer;
+    }
+
+    .fas{
+    margin-right: 5px;
+    color: white;
+
+    }
+
+    .botonCesta{
+    color: white;
+    background-color: #e1b12c !important;
+    font-size: 17px;
+    border: 1px solid white;
+    }
+    .botonCesta:hover{
+   border: 1px solid black;
+    }
+   
+
+
+
+
