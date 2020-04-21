@@ -1,16 +1,32 @@
-<div *ngIf="product">
-<h1>{{product.name}}</h1>
-<img src="{{product.image_path}}" alt="Imagen">
-<h3>{{product.price}}</h3>
-<h3>{{product.cantidad}}</h3>
+
+<div *ngIf="product" class="product">  
+    <div>
+        <h1 class="nombreProducto"><strong>{{product.name}}</strong></h1>
+        <img src="{{product.image_path}}" alt="Imagen">
+    </div>
+
+    <div class="descripcionPrecioStock">
+        <div id="categoria"><h6>Categorías:</h6>&nbsp; <p *ngFor="let tematica of product.Tematicas">{{tematica.name}}.&nbsp;</p></div>
+        <h6 class="tituloDescripcion"><strong>Descripción del producto</strong></h6>
+        <p class="descripcion">{{product.descripcion}}</p>
+        <h6 class="precio">Precio: <span id="resultadoPrecio">{{product.price}}€</span></h6>
+        <h6 class="cantidad" >Cantidad:&nbsp; <select  [(ngModel)]="cantidad" #select="ngModel" name="select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        </h6>
+        <button type="button" class="btn btn-warning btn-sm" (click)="guardarCesta()" ><i class="fas fa-shopping-cart fa-lg"></i> Añadir a la cesta</button>  
+ 
 </div>
-
-
-
-
-
-
-
-
+</div>
+    
 
 

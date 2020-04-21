@@ -17,8 +17,8 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.productsService.getAll().subscribe(res => this.productsService.setProducts(res), error => console.log(error))
   }
-  showProductDetail(productId:number) {
+  mostrarDetalleProducto(productId:number) {
     // this.router.navigate(['product/'+productId])
-    this.router.navigate(['product',productId])
+    this.router.navigate(['product', productId ])
   }
 }

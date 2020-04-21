@@ -16,6 +16,8 @@ import { RegistroComponent } from './containers/registro/registro.component';
 import { FormsModule } from '@angular/forms';
 import { SearchProductsComponent } from './search-products/search-products.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { TematicaDetailComponent } from './tematica-detail/tematica-detail.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     RegistroComponent,
     SearchProductsComponent,
     ProductDetailComponent,
+    TematicaDetailComponent,
+    ShoppingCartComponent,
   
 
   ],

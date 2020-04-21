@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.INTEGER,
     TematicaId: DataTypes.INTEGER,
     cantidad: DataTypes.INTEGER,
-    image_path: DataTypes.STRING
+    image_path: DataTypes.STRING,
+    descripcion: DataTypes.STRING
   }, {});
   Product.associate = function(models) {
      // associations can be defined here

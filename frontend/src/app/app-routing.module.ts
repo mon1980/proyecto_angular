@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './containers/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -11,6 +12,8 @@ import { LoginComponent } from './containers/login/login.component';
 import { RegistroComponent } from './containers/registro/registro.component';
 import { SearchProductsComponent } from './search-products/search-products.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { TematicaDetailComponent } from './tematica-detail/tematica-detail.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 
 
@@ -24,8 +27,10 @@ const routes: Routes = [
   {path:'tematicas',component:TematicasComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:RegistroComponent},
-  { path: 'products/search/:searchValue', component: SearchProductsComponent},
-  { path: 'product/:id', component: ProductDetailComponent},
+  {path:'products/search/:searchValue', component: SearchProductsComponent},
+  {path:'product/:id', component: ProductDetailComponent},
+  {path:'tematica/:id', component: TematicaDetailComponent},
+  {path:'shopping-cart',component: ShoppingCartComponent},
   {path: '**',component:NotFoundComponent}
  
 ];

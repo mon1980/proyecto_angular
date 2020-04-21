@@ -12,12 +12,16 @@ export class TematicasService {
   constructor(public httpClient: HttpClient) { }
   
 getAll(): Observable<any> {
-return this.httpClient.get("http://localhost:3000/tematicas")
+return this.httpClient.get('http://localhost:3000/tematicas');
 }
 
 
 setTematicas(tematicas): void {
   this.tematicas = tematicas;
+}
+
+getOne(id){
+return this.httpClient.get('http://localhost:3000/tematicas/' + id);
 }
 
 

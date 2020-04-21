@@ -1,11 +1,9 @@
 <h5 class="titulotematicas">Categorías</h5>
 <div class="tematicas" *ngIf="tematicasService.tematicas">
     <div *ngFor="let tematica of tematicasService.tematicas" class="tematica">
-        <h2 class="nombretematicas">{{tematica.name}}</h2>
-
+        <h2 class="nombretematicas" (click)="mostrarDetalleTematica(tematica.id)">{{tematica.name}}</h2>
     </div>
 
 </div>
-
-
-
+  
+ 

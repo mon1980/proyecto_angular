@@ -24,6 +24,7 @@ export class HeaderComponent {
   logout() {
     // esto elimina el token de localStorage
     localStorage.removeItem('authToken');
+    localStorage.removeItem('carrito');
     // quita el usuario del servicio, entonces ya no aparece en header
     this.userService.setUser({})
 

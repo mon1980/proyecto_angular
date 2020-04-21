@@ -1,0 +1,11 @@
+
+<div class="product" *ngFor="let order of finalCarrito">
+    <div>
+    <h3 class="nombreProducto">{{order['name']}}</h3>
+    <img src="{{order.image_path}}" alt="">
+    <p id="resultadoPrecio"><strong>Precio: </strong> {{order['price']}}€</p>
+    <p class="cantidad"><strong>Cantidad: </strong>{{order['cantidad']}}</p>
+</div>
+</div>
+<button (click)="enviarPedido()">Finalizar Compra</button>
+<p [ngClass]="{'hidden':toggle, 'show': !toggle}">Pedido realizado con éxito</p>

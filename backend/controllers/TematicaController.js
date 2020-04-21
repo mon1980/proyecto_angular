@@ -1,4 +1,5 @@
-const { Tematica, Product } = require('../models/index.js')
+const { Tematica, Product, ProductTematica, Sequelize } = require('../models/index.js');
+const {Op} =Sequelize;
 const TematicaController = {
     getAll(req,res){
         Tematica.findAll({
@@ -9,6 +10,17 @@ const TematicaController = {
     },
 
 
+    getOne(req,res){
+        Tematica.findByPk(req.params.id, {
+            include: [Product]
+        })
+        .then(tematica => res.send(tematica))
+        .catch(error=>{
+            console.log(error);
+            res.status(500).send({message: 'Ha surgido un error al intentar tramitar la petición.', error})
+        })
+
+    },
     getOneByName(req,res){
         Tematica.findAll({
             where:{
@@ -22,12 +34,16 @@ const TematicaController = {
 
     },
 
-
-
-    insert(req,res){
-        Tematica.create({name:req.body.name})
-        .then(tematica=>res.send(tematica))
+    insert(req, res) {
+        Tematica.create({
+                ...req.body
+            })
+            .then(tematica => {
+                tematica.addProduct(req.body.products);
+                res.status(201).send(tematica)
+            })
     },
+
 
     async delete(req, res) {
         await Tematica.destroy({
@@ -35,11 +51,18 @@ const TematicaController = {
                 id: req.params.id
             }
         })
+
+        await ProductTematica.destroy({
+            where: {
+                TematicaId: req.params.id
+            }
+        })
        
         res.send({
             message: 'Temtica eliminada correctamente'
         })
     },
+
 
     update(req,res){
         Tematica.update({...req.body},{
