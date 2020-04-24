@@ -1,11 +1,18 @@
-
+<div class="productosCesta">
 <div class="product" *ngFor="let order of finalCarrito">
-    <div>
+    <div class="productDetalle">
+     <p class="productoCesta">Añadido a la cesta</p>   
     <h3 class="nombreProducto">{{order['name']}}</h3>
     <img src="{{order.image_path}}" alt="">
     <p id="resultadoPrecio"><strong>Precio: </strong> {{order['price']}}€</p>
     <p class="cantidad"><strong>Cantidad: </strong>{{order['cantidad']}}</p>
+    <button (click)="deleteFromCart(order.id)" class="eliminarProducto">Eliminar producto</button>
+    <br><br>
 </div>
 </div>
-<button (click)="enviarPedido()">Finalizar Compra</button>
-<p [ngClass]="{'hidden':toggle, 'show': !toggle}">Pedido realizado con éxito</p>
+</div>
+<div class="finalizarCompra">
+   <button type="button" (click)="enviarPedido()" class="btn btn-secondary">Finalizar Compra</button> 
+</div>
+<div class="pedidoExito"><p [ngClass]="{'hidden':toggle, 'show': !toggle}" >Pedido realizado con éxito</p></div>
+

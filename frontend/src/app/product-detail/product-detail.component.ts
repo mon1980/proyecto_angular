@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-detail',
@@ -12,7 +12,7 @@ export class ProductDetailComponent implements OnInit {
   public cantidad=1;
   carrito:Object={};
   oldCarrito:Array<{}>=[];
-  constructor(public productsService: ProductsService, public route: ActivatedRoute) { }
+  constructor(public productsService: ProductsService, public route: ActivatedRoute, public router: Router) { }
 
   ngOnInit(): void {
   const id = this.route.snapshot.params.id;
@@ -22,6 +22,7 @@ export class ProductDetailComponent implements OnInit {
 
 guardarCesta(){
   this.carrito=({id:this.product['id'], name:this.product['name'], price:this.product['price'], image_path:this.product['image_path'], cantidad:this.cantidad })
+  
 
   if(localStorage.getItem("carrito")){
 this.oldCarrito=JSON.parse(localStorage.getItem('carrito'))
@@ -30,8 +31,9 @@ this.oldCarrito.push(this.carrito)
 localStorage.setItem("carrito", JSON.stringify(this.oldCarrito))
   }else{localStorage.setItem("carrito", JSON.stringify([this.carrito]))}
 
-}
+  this.router.navigate(['shopping-cart'])
+
+
 
 }
-
-
+}

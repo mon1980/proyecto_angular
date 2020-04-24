@@ -1,5 +1,6 @@
 import { OrderService } from './../../services/order.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -8,21 +9,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingCartComponent implements OnInit {
 finalCarrito;
+cart;
+newCart;
 toggle:boolean=true;
-  constructor(public orderService:OrderService) { }
+  constructor(public orderService:OrderService, public router:Router) { }
 
   ngOnInit(): void {
     this.finalCarrito= JSON.parse(localStorage.getItem('carrito'))
     console.log(this.finalCarrito)
   }
 enviarPedido(){
-this.orderService.crearPedido(this.finalCarrito)
+
+  this.orderService.crearPedido(this.finalCarrito)
 .subscribe((res)=>{
   console.log(res)
   this.toggle=false;
   setTimeout(() => {
     this.toggle=true;
-  }, 3000);
+  }, 2000);
+
+  setTimeout(() => {
+  this.router.navigate([''])
+  }, 2000);
+
 })
+
 }
+
+
+deleteFromCart(id:string){
+localStorage.removeItem('carrito')
+this.newCart= this.finalCarrito.filter(cuadro=>cuadro.id!==id)
+localStorage.setItem("carrito", JSON.stringify(this.newCart))
+location.reload()
+
+}
+
 }

@@ -1,25 +1,38 @@
-.product{
-    display: flex;
-    justify-content: flex-start;
+
+    .productosCesta{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
     }
+
+    .productDetalle{
     
-    
-    
+        padding: 0.5em;
+        margin: 0.5em;
+        border-radius: 0.5em;
+        background-color: #D697FF;
+        width: 14em;
+        height: 90%;
+      
+    }
+
     img {
         border-radius: 0.5em;
         height: 100px;
-        margin-left:50px;
-    
+        display:block;
+        margin:auto;
+        
     }
     
     .nombreProducto{
     font-size: 15px;
-    padding-bottom: 3px;
     font-family: 'Roboto', sans-serif;
-    padding-top: 4px;
     padding-left: 50px;
-    text-align: center;
-    
+    padding-bottom: 8px;
+    display:block;
+    margin:auto;
+  
     
     }
     
@@ -46,24 +59,77 @@
     }
     
     
-    .precio{
-    padding-bottom: 8px;
-
+    #resultadoPrecio{
+    font-size: 14px;
+    padding-bottom: 3px;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 4px;
+    padding-left: 64px;
+    display:block;
+    margin:auto;
     }
     
     .cantidad{
     padding-bottom: 8px;
-    padding-left: 50px;
-    
-  
+    font-size: 14px;
+    padding-bottom: 3px;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 4px;
+    padding-left: 64px;
+    display:block;
+    margin:auto;
+
     }
     
     .tituloDescripcion{
     font-size: 17px;
     }
+
     .hidden{
         display: none;
     }
     .show{
         display: initial;
     }
+
+   .eliminarProducto{
+    
+   font-size: 14px;
+   margin-left: 42px;
+   margin-top: 7px;
+
+}
+
+.finalizarCompra{
+   display:flex;
+   justify-content: center;
+   padding-bottom: 20px;
+   padding-top: 8px;
+ 
+   
+    }
+
+.textoFinalizarCompra{
+
+margin-top: 15px;
+background-color: #7F7E7E;
+color: white;
+border: 1px;
+border-radius: 10px;
+font-size: 15px;
+
+}
+
+.productoCesta{
+
+color: white;
+text-align: center;
+font-size: 20px;
+}
+
+.pedidoExito{
+display: flex;
+justify-content: center;
+margin-bottom: 50px;
+
+}

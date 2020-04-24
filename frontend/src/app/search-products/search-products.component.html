@@ -3,7 +3,6 @@
 <div class="product" *ngFor="let product of products">
     <h2 class="nombreproducto">{{product.name}}</h2>
     <img src="{{product.image_path}}" alt="no hay imagen">
-    <h3 class="precio">Price: {{product.price}} €</h3>
-    <h4 class="stock">Stock: {{product.cantidad}} unidades</h4>
+    <div class="link"><button type="button" class="btn btn-outline-secondary" (click) ="mostrarDetalleProducto(product.id)">Ver más</button></div>
 </div>
 </div>

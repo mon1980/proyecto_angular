@@ -13,14 +13,17 @@ img {
 }
 
 .nombreProducto{
-font-size: 20px;
-padding-bottom: 3px;
-font-family: 'Roboto', sans-serif;
-padding-top: 4px;
-padding-left: 50px;
-text-align: center;
 
-}
+        text-align: center;
+        font-size: 17px;
+        border-radius: 34px;
+        font-family: 'Roboto', sans-serif;
+        margin-top: 3px;
+        color: black;
+       
+        }
+
+
 
 .descripcionPrecioStock{
     display:flex;
@@ -60,9 +63,10 @@ font-size: 14px;
 
 }
 
-
 .tituloDescripcion{
 font-size: 17px;
+}
 
-
+.none{
+    display: none;
 }

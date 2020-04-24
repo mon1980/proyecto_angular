@@ -1,6 +1,6 @@
 import { ProductsService } from './../services/products.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 
 @Component({
@@ -12,7 +12,8 @@ export class SearchProductsComponent implements OnInit {
 products
   constructor(
     public route: ActivatedRoute,
-    public productsService: ProductsService
+    public productsService: ProductsService,
+    public router: Router
   ) { }
 
   ngOnInit(): void {
@@ -22,11 +23,20 @@ products
         this.productsService.searchProducts(params.searchValue)
           .subscribe(
             (res: HttpResponse<any>) => {
+              if(!params.searchValue){
+                this.router.navigate(['']);
+              }
+              
               this.products = res;
             },
             (error: HttpErrorResponse) => console.log(error)
           )
       });
+  };
+
+  mostrarDetalleProducto(productId:number) {
+    // this.router.navigate(['product/'+productId])
+    this.router.navigate(['product', productId ])
   }
 
 }
