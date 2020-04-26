@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 
   export class OrderService {
     public orders: object[]
+    private token: string;
     constructor(public httpClient: HttpClient) { }
 
 
@@ -19,8 +20,9 @@ import { Observable } from 'rxjs';
     return this.httpClient.get('http://localhost:3000/orders');
     }
   
-  crearPedido(productos){
-    return this.httpClient.post('http://localhost:3000/orders',{deliveryDate:"2020-05-15", productos})
+    crearPedido(productos){
+      this.token=localStorage.getItem('authToken');
+    return this.httpClient.post('http://localhost:3000/orders',{deliveryDate:"2020-05-15", productos}, {headers: {Authorization: this.token}})
   }  
     
   }

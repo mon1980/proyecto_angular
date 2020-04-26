@@ -26,6 +26,10 @@ export class ProductsService {
   searchProducts(searchValue) {
     return this.httpClient.get('http://localhost:3000/products/name/'+searchValue);
   }
+
+  getExchangeRates(): Observable<any> {
+    return this.httpClient.get('https://api.exchangeratesapi.io/latest');
+  }
   
 }
 

@@ -14,6 +14,9 @@ import { SearchProductsComponent } from './search-products/search-products.compo
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { TematicaDetailComponent } from './tematica-detail/tematica-detail.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { AddTematicaComponent } from './components/add-tematica/add-tematica.component';
+import { PedidosComponent } from './components/pedidos/pedidos.component';
 
 
 
@@ -31,6 +34,9 @@ const routes: Routes = [
   {path:'product/:id', component: ProductDetailComponent},
   {path:'tematica/:id', component: TematicaDetailComponent},
   {path:'shopping-cart',component: ShoppingCartComponent},
+  {path:'add-product',component:  AddProductComponent},
+  {path:'add-tematica',component:  AddTematicaComponent},
+  {path:'pedidos',component: PedidosComponent},
   {path: '**',component:NotFoundComponent}
  
 ];

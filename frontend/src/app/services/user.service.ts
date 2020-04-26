@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class UserService {
   private token: string = "";
   private user:object={};
+  public users:object=[];
 
   constructor(public httpClient: HttpClient) { }
   
@@ -16,6 +17,11 @@ export class UserService {
   }
   register(user: object) {
     return this.httpClient.post('http://localhost:3000/users/register', user);
+  }
+
+  setUsers(users: object[]): void {
+    this.users = users;
+
   }
   setToken(token: string): void {
     this.token = token;
@@ -29,13 +35,20 @@ export class UserService {
   getUser(): object {
     return this.user;
   }
-  getUserInfo(token) {
+  getUserInfo(token: string) {
     return this.httpClient.get('http://localhost:3000/users/info', {
       headers: {
         authorization: token
       }
     })
   }
+
+  getAll(): Observable<any> {
+    this.token = localStorage.getItem('authToken');
+    return this.httpClient.get('http://localhost:3000/users', {headers: {Authorization: this.token}});
+  }
+
+
 }
 
 

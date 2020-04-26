@@ -1,1 +1,14 @@
-<p>user works!</p>
+<div class="users"  *ngIf="userService['users']">
+    <div *ngFor="let user of userService['users']">
+
+    <p>Nombre: {{user.username}}</p>
+    <p>Email: {{user.email}}</p>
+
+    </div>
+
+    <div>
+
+        <p>Informacion Usuario</p>
+    </div>
+
+</div>

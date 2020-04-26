@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-
-  constructor() { }
+ 
+  constructor(public userService: UserService) { }
 
   ngOnInit(): void {
+
+    this.userService.getAll()
+    .subscribe(
+      res => this.userService.setUser(res), 
+      error => console.log(error)
+    );
   }
 
 }

@@ -29,6 +29,33 @@
       <li class="nav-item"  *ngIf="!user.id">
         <a class="nav-link" routerLink="/signup">Registro</a>
       </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link" 
+
+        *ngIf="admins.includes(userService['user']['role'])"
+ 
+        href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Administración
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="/pedidos">Pedidos</a>
+
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="/user">Usuarios</a>
+       
+
+         <div class="dropdown-divider"></div>
+         <a class="dropdown-item" routerLink="/add-product">Añadir producto</a>
+
+         <div class="dropdown-divider"></div>
+        <a class="dropdown-item" routerLink="/add-tematica">Añadir tematica</a>
+       </div>
+
+
+        
+      </li>
     </ul>
     
     <form class="form-inline my-2 my-lg-0" (submit)="searchProducts($event)"> 
@@ -37,8 +64,9 @@
     </form>
     <button class="btn my-2 my-sm-0" type="submit"><a class="nav-link botonCesta " routerLink="/shopping-cart"><i class="fas fa-shopping-cart fa-lg"></i>Cesta</a></button>
     </div>
-
     </nav>
+
+  
 
     <nav class="titulo">
       <img src="assets//images/logo.jpg">
@@ -46,8 +74,16 @@
     </nav>
 
     
-   
+
     
+
+
+  
+
+
+
+
+   
    
 
   

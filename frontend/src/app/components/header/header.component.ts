@@ -1,5 +1,5 @@
 import { TematicasService } from 'src/app/services/tematicas.service';
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
@@ -12,7 +12,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  public admin = ['superAdmin', 'admin', 'dios'];
+  public admins = ['admin'];
+  finalCarrito;
+
+
+  
+  
   constructor(
     public productsService: ProductsService,
     public userService: UserService,
@@ -21,6 +26,7 @@ export class HeaderComponent {
 
   ) { }
 
+ 
   logout() {
     // esto elimina el token de localStorage
     localStorage.removeItem('authToken');
@@ -34,7 +40,10 @@ export class HeaderComponent {
     const searchValue = event.target.search.value;
     this.router.navigate(['/products/search', searchValue]);
   }
+
+
 }
+
 
 
 
