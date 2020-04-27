@@ -1,3 +1,5 @@
+<div *ngIf="tematica">
+
 <div><h1 class="nombreCategoria">{{tematica.name}}</h1></div>
 
 <div  class="products" *ngIf="tematica">
@@ -6,6 +8,6 @@
 <h2 class="nombreproducto">{{product.name}}</h2>
 <img src="{{product.image_path}}" alt="no hay imagen">
 <div class="link"><button type="button" class="btn btn-outline-secondary" (click) ="mostrarDetalleProducto(product.id)">Ver más</button></div>
-
+</div>
 </div>
 </div>

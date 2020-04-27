@@ -14,7 +14,7 @@ export class UserComponent implements OnInit {
 
     this.userService.getAll()
     .subscribe(
-      res => this.userService.setUser(res), 
+      res => this.userService.setUsers(res), 
       error => console.log(error)
     );
   }

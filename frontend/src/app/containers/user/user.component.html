@@ -1,14 +1,16 @@
-<div class="users"  *ngIf="userService['users']">
-    <div *ngFor="let user of userService['users']">
+<div class="users"  *ngIf="userService['users'] as users">
+    <div *ngFor="let user of users">
 
     <p>Nombre: {{user.username}}</p>
     <p>Email: {{user.email}}</p>
 
+    <div class="orders" *ngFor="let order of user.Orders">
+        {{order | json}}
+    </div>
     </div>
 
     <div>
 
         <p>Informacion Usuario</p>
     </div>
-
 </div>

@@ -11,7 +11,7 @@ const UserController = {
         User.findAll({
             include:[Order],
             order: [
-                ['name', 'ASC']
+                ['username', 'ASC']
             ]
         })
         .then(users=>res.status(200).send(users))

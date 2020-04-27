@@ -13,7 +13,7 @@ const authentication = async (req, res, next) => {
                 
                 [Op.and]: [{
                     
-                    token:token
+                    token:token,
                 
                 }, {UserId:payload.id
                 
